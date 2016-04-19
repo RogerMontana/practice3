@@ -1,3 +1,5 @@
+package tests;
+
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -10,16 +12,10 @@ public class BaseTest extends TestCase{
 
 	protected static WebDriver driver;
 
-	public static WebDriver getDriver() {
-		return driver;
-	}
-
 	@Before
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		String baseUrl = "http://skillsup.ua";
-		driver.get(baseUrl);
 	}
 
 	@After
