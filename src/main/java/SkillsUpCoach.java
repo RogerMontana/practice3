@@ -13,30 +13,29 @@ public class SkillsUpCoach extends BaseTest{
 
 	public void testThatBokhanIsPresented() throws Exception {
 		goToCoachPage();
-		String coach2 = "Евгения Бохан";
-		assertTrue("person is not presented", getAllCoachNames().contains(coach2));
+		checkThatPersonIsPresented("Евгения Бохан");
 	}
 
 	public void testThatGalkovskiyIsPresented() throws Exception {
 		goToCoachPage();
-		String coach3 =  "Александр Галковский";
-		assertTrue("person is not presented", getAllCoachNames().contains(coach3));
+		checkThatPersonIsPresented("Александр Галковский");
 	}
-
-//	public void testThatKarpovIsPresentedWillFail() throws Exception {
-//		goToCoachPage();
-//		String coach1 = "Артем Карпов";
-//		assertTrue("person is not presented", getAllCoachNames().contains(coach1));
-//	}
 
 	public void testThatKarpovIsPresented() throws Exception {
 		goToCoachPage();
-		String coach1 = "Артем Карпов";
-		assertFalse("person is presented", getAllCoachNames().contains(coach1));
+		checkThatPersonIsNotPresented("Артем Карпов");
 	}
 
 	private void goToCoachPage() {
 		driver.findElement(ourTeam).click();
+	}
+
+	private void checkThatPersonIsPresented(String person) {
+		assertTrue(person + " person is not presented", getAllCoachNames().contains(person));
+	}
+
+	private void checkThatPersonIsNotPresented(String person) {
+		assertFalse(person + " person is presented", getAllCoachNames().contains(person));
 	}
 
 	private List<String> getAllCoachNames() {
