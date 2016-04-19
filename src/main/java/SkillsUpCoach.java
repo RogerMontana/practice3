@@ -11,13 +11,13 @@ public class SkillsUpCoach extends BaseTest{
 	private By ourTeam = By.linkText("Наша команда");
 	private By nameFieldInsideCard = By.className("name");
 
-	public void testThatBokhanIsPresened() throws Exception {
+	public void testThatBokhanIsPresented() throws Exception {
 		goToCoachPage();
 		String coach2 = "Евгения Бохан";
 		assertTrue("person is not presented", getAllCoachNames().contains(coach2));
 	}
 
-	public void testThatGalkovskiyIsPresened() throws Exception {
+	public void testThatGalkovskiyIsPresented() throws Exception {
 		goToCoachPage();
 		String coach3 =  "Александр Галковский";
 		assertTrue("person is not presented", getAllCoachNames().contains(coach3));
