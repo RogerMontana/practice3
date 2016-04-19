@@ -8,18 +8,18 @@ public class SkillsUpCoach extends BaseTest {
 	public void testThatBokhanIsPresented() throws Exception {
 		coachPageView = new CoachPageView(driver);
 		coachPageView.goToCoachPage();
-		coachPageView.checkThatPersonIsPresented("Евгения Бохан");
+		assertTrue(coachPageView.checkThatPersonIsPresented("Евгения Бохан"));
 	}
 
 	public void testThatGalkovskiyIsPresented() throws Exception {
 		coachPageView = new CoachPageView(driver);
 		coachPageView.goToCoachPage();
-		coachPageView.checkThatPersonIsPresented("Александр Галковский");
+		assertTrue(coachPageView.checkThatPersonIsPresented("Александр Галковский"));
 	}
 
 	public void testThatKarpovIsNotPresented() throws Exception {
 		coachPageView = new CoachPageView(driver);
 		coachPageView.goToCoachPage();
-		coachPageView.checkThatPersonIsNotPresented("Артем Карпов");
+		assertFalse(coachPageView.checkThatPersonIsPresented("Артем Карпов"));
 	}
 }

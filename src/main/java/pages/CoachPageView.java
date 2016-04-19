@@ -16,7 +16,7 @@ public class CoachPageView {
 
 	private WebDriver driver;
 
-	private static String baseUrl = "http://skillsup.ua";
+	private static String pageUrl = "http://skillsup.ua";
 
 	private By ourTeam = By.linkText("Наша команда");
 
@@ -24,7 +24,7 @@ public class CoachPageView {
 
 	public CoachPageView(WebDriver driver) {
 		this.driver = driver;
-		driver.get(baseUrl);
+		driver.get(pageUrl);
 		PageFactory.initElements(driver, this);
 	}
 
@@ -32,14 +32,10 @@ public class CoachPageView {
 		driver.findElement(ourTeam).click();
 	}
 
-	public void checkThatPersonIsPresented(String person) {
-		assertTrue(person + " person is not presented", getAllCoachNames().contains(person));
+	public Boolean checkThatPersonIsPresented(String person) {
+		return getAllCoachNames().contains(person);
 	}
-
-	public void checkThatPersonIsNotPresented(String person) {
-		assertFalse(person + " person is presented", getAllCoachNames().contains(person));
-	}
-
+	
 	private List<String> getAllCoachNames() {
 		return driver.findElements(nameFieldInsideCard).stream().map(WebElement::getText).collect(Collectors.toList());
 	}
