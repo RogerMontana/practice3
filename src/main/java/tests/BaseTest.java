@@ -8,8 +8,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import junit.framework.TestCase;
-public class BaseTest extends Assert{
+public class BaseTest extends Assert {
 
 	protected static WebDriver driver;
 

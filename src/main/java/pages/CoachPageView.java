@@ -1,8 +1,5 @@
 package pages;
 
-import static junit.framework.TestCase.assertFalse;
-import static junit.framework.TestCase.assertTrue;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
