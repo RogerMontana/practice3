@@ -29,7 +29,7 @@ public class CoachPageView {
 		driver.findElement(ourTeam).click();
 	}
 
-	public Boolean checkThatPersonIsPresented(String person) {
+	public boolean checkThatPersonIsPresented(String person) {
 		return getAllCoachNames().contains(person);
 	}
 	
